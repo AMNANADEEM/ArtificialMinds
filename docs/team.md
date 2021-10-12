@@ -6,11 +6,11 @@ title:  Team
 # {{ page.title }}
 
 
-## USER 1
-***UCI Net ID***: ucinetid1
+## Amna Nadeem
+***UCI Net ID***: anadeem1
 
-## USER 2
-***UCI Net ID***: ucinetid2
+## Tanya Sreeganesh
+***UCI Net ID***: tsreenag
 
-## USER 3
-***UCI Net ID***: ucinetid3
+## Saman Bodla
+***UCI Net ID***: sbodla
