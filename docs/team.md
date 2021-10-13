@@ -9,7 +9,7 @@ title:  Team
 ## Amna Nadeem
 ***UCI Net ID***: anadeem1
 
-## Tanya Sreeganesh
+## Tanya Sreenagesh
 ***UCI Net ID***: tsreenag
 
 ## Saman Bodla
