@@ -20,4 +20,7 @@ Our goal is to have our agent learn to avoid hitting pedestrians, stay in the la
 ### Qualitative Evaluation
 At the start, we expect our agent to be going off the road often, not being able to follow the right lane and not avoiding pedestrians.  Eventually, we expect it to maintain a constant speed throughout the course, be able to slow down at turns, and stop at a responsible pace when a pedestrian is identified. The moonshot case for our project would be if our agent learnt to drive on different road maps at a relatively faster speed, making quicker decisions while identifying close to 100% of the pedestrians crossing the road and stopping well before in a safe manner.
 
+## Meeting #1 (w/ Prof. Roy Fox)
+Thursday, October 21, 2021 at 02:00pm (Pacific Time - US & Canada)
 
+Zoom link: https://uci.zoom.us/j/8333245266?pwd=RnhFQU9qanRGZ0lCL1lYZnNPVmk
