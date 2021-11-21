@@ -4,8 +4,11 @@ title: Status
 ---
 
 ## Video Summary
-https://youtu.be/8sQ8rCFbl-w
+[https://youtu.be/8sQ8rCFbl-w](https://youtu.be/8sQ8rCFbl-w)
 
+[![Alternate Text]({https://youtu.be/8sQ8rCFbl-w})]({https://youtu.be/8sQ8rCFbl-w} "Link Title")
+
+[![IMAGE ALT TEXT HERE](https://ccweb.imgix.net/https%3A%2F%2Fd3f1iyfxxz8i1e.cloudfront.net%2Fcourses%2Fcourse_image%2F0a96e0fb27bd.png?ar=16%3A9&auto=format&cs=strip&fit=crop&h=380&ixlib=php-3.3.0&w=535&s=43b4bc7156698877b04e7d36f89f249f)](https://youtu.be/8sQ8rCFbl-w)
 
 ## Summary of the Project
 
