@@ -4,6 +4,7 @@ title: Status
 ---
 
 ## Video Summary
+https://youtu.be/8sQ8rCFbl-w
 
 
 ## Summary of the Project
