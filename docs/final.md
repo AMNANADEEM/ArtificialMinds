@@ -60,22 +60,22 @@ Measuring the performance of our trained agent was one of the harder parts of th
 
 With our baseline off-policy algorithm (i.e. DDPG), we were able to train our model to make decisions in continuous action spaces. The following is a visualization of the testing rewards over a small period of timesteps. 
 
-![test-rewards-base](https://user-images.githubusercontent.com/35225535/145662315-c63c1fb7-1e44-4592-8314-1f3507729366.png)
+<img src="https://user-images.githubusercontent.com/35225535/145662315-c63c1fb7-1e44-4592-8314-1f3507729366.png" width=650 height=600 />
 
 The results of the baseline model were majorly inconclusive - we were unsure of whether the model was overfitting or the inputs needed to be improved on. We decided to tune various hyperparameters to get a better understanding. The specific ways in which we tuned hyperparameters are mentioned in the Approaches section. Below are some of the rewards plots from testing our trained models. The graphs are heavily populated since they are over many timesteps. However, it is clear to see that the changes we made to our hyperparameters did not help the agent get much better at following the right side of the street. In the first graph, where we modified the rewards function, it initially looked like a step in the right direction due to skewed positive results. However, the body of the graphs suggests that the model may still be overfitting. For this reason, in the following trainings, we decided not to exaggerate the rewards and focus on other hyperparameters (specifically the exploration noise and the start timesteps).
 
 
-![test-rewards-tanya-1](https://user-images.githubusercontent.com/35225535/145662318-6c9152a8-a0b8-4ee0-a64f-0bcffb578161.png)
+<img src="https://user-images.githubusercontent.com/35225535/145662318-6c9152a8-a0b8-4ee0-a64f-0bcffb578161.png" width=650 height=600 />
 
 Testing Results (with modified rewards function)
 
 
-![test-rewards-saman-2](https://user-images.githubusercontent.com/35225535/145662403-8ee8df61-031b-4691-af2f-7888cdf3aff7.png)
+<img src="https://user-images.githubusercontent.com/35225535/145662403-8ee8df61-031b-4691-af2f-7888cdf3aff7.png" width=650 height=600 />
 
 Testing Results (with increased start_timesteps)
 
 
-![test-rewards-amna-2](https://user-images.githubusercontent.com/35225535/145662408-32f80ebf-57d6-4bcf-af82-ee2807fb5533.png)
+<img src="https://user-images.githubusercontent.com/35225535/145662408-32f80ebf-57d6-4bcf-af82-ee2807fb5533.png" width=650 height=600 />
 
 Testing Results (with increased expl_noise)
 
