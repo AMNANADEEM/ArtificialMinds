@@ -46,15 +46,44 @@ We were hoping that from these first 3 models we would be able to determine what
 
 Since we did not learn much from the first 5 models that we trained, we wanted to try a different approach by manipulating the observation image and converting it into a grayscale image. There were several wrappers that controlled the rewards, manipulated the image, and other tasks, so we decided to add one that converted the image. While we were able to put the image into grayscale, we were not able to successfully return the correctly sized array and were unable to actually run training with that change due to limits on time. The following is an example of our implementation to convert the image.
 
+
 ![graywrapper](https://user-images.githubusercontent.com/45059021/145662211-859a64f9-08ed-4c31-abfd-6600f1f5dee3.jpg)
 
 
 ## Evaluation
-[An important aspect of your project, is evaluating your project. Be clear and precise about
-describing the evaluation setup, for both quantitative and qualitative results. Present the results to convince
-the reader that you have solved the problem, to whatever extent you claim you have. Use plots, charts, tables,
-screenshots, figures, etc. as needed. I expect you will need at least a few paragraphs to describe each type of
-evaluation that you perform.]
+Quantitative:
+Measuring the performance of our trained agent was one of the harder parts of this project since metrics for evaluating an agent’s driving and lane following abilities is not clear-cut and depends on a variety of factors like the quality of the image input. In order to have a quantitative analysis of our bot’s driving abilities, we focused on the rewards collected by our DuckieBot both during training and testing. As we fine-tuned various hyperparameters of the model, we recorded the rewards received by the agent and visualized this data in the form of linear graphs to be able to identify how beneficial each adjustment to the hyperparameters was and how to further improve the model. Below we discuss some of the results of training and testing our agent with the baseline DDPG algorithm and with some hyperparameters tuned.
+
+With our baseline off-policy algorithm (i.e. DDPG), we were able to train our model to make decisions in continuous action spaces. The following is a visualization of the testing rewards over a small period of timesteps. 
+
+![test-rewards-base](https://user-images.githubusercontent.com/35225535/145662315-c63c1fb7-1e44-4592-8314-1f3507729366.png)
+
+The results of the baseline model were majorly inconclusive - we were unsure of whether the model was overfitting or the inputs needed to be improved on. We decided to tune various hyperparameters to get a better understanding. The specific ways in which we tuned hyperparameters are mentioned in the Approaches section. Below are some of the rewards plots from testing our trained models. The graphs are heavily populated since they are over many timesteps. However, it is clear to see that the changes we made to our hyperparameters did not help the agent get much better at following the right side of the street. In the first graph, where we modified the rewards function, it initially looked like a step in the right direction due to skewed positive results. However, the body of the graphs suggests that the model may still be overfitting. For this reason, in the following trainings, we decided not to exaggerate the rewards and focus on other hyperparameters (specifically the exploration noise and the start timesteps).
+
+
+![test-rewards-tanya-1](https://user-images.githubusercontent.com/35225535/145662318-6c9152a8-a0b8-4ee0-a64f-0bcffb578161.png)
+
+Testing Results (with modified rewards function)
+
+
+![test-rewards-saman-2](https://user-images.githubusercontent.com/35225535/145662403-8ee8df61-031b-4691-af2f-7888cdf3aff7.png)
+
+Testing Results (with increased start_timesteps)
+
+
+![test-rewards-amna-2](https://user-images.githubusercontent.com/35225535/145662408-32f80ebf-57d6-4bcf-af82-ee2807fb5533.png)
+
+Testing Results (with increased expl_noise)
+
+
+Qualitative:
+In order to have a qualitative analysis of our project, we wanted to get the Duckietown simulator running to see how our bot was navigating. However, since we ultimately decided to train our bot on the AWS servers, we learned that the only way to get the simulator to work would be through setting up dual booting on our local machine. Due to the time limitations, the advice we’ve gotten, and the issues we’ve encountered throughout the set up process, we have decided to not set up the simulator and rely on other factors for qualitative analysis.
+
+Another part of our qualitative analysis comes from the training results. As our agent trains, we get detailed feedback on the bot’s performance. Some of the information we receive tells us whether the bot was on drivable terrain, the coordinates of the bot respective to the map and whether it got into any collisions. Below is a snippet of the training debugging output that we used internally for quantitative analysis. These details give us an understanding of the quality of our bot’s performance as it trains.
+
+![unnamed](https://user-images.githubusercontent.com/35225535/145662381-6ca13b8d-29a0-4df0-a13f-7d949d581891.png)
+
+
 ## References
 Research papers on DDPG, SAC and other algorithms:
 DDPG implementation of rl template: https://arxiv.org/pdf/1509.02971.pdf
