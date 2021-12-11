@@ -4,14 +4,8 @@ title: Final Report
 ---
 
 ## Video
-[Use a level two header at the very top, and embed the video of your project using the YouTube embed
-video option. Specifically, go to your video on YouTube, then click on Share, then Embed, and copy-paste
-the code in final.md . As in the status report, the video should contain a brief problem description (using
-images, screenshots, or screen captures), an example capture of how a simple baseline performs, and an
-example capture of a run that is your best. You are free to include more details, such as summary of how you
-did it, some of the failure cases, but it is not needed. The video should be a maximum of three minutes
-(less is fine), of reasonably high quality, i.e. a minimum resolution of 1200 ×720 (i.e. 720p), and speech, if
-any, should be comprehensible.]
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/SLdMcQErimo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Project Summary
 Duckietown is an urban environment platform that allows people to train DuckieBots to drive on various roads and navigate unseen routes. This platform has been used widely for research on autonomous driving and physically embodied AI systems. Typically, DuckieTown is configured as a physical platform, with hardware being provided to build tracks and low-cost mobile robots being used as DuckieBots. For the purposes of our project, we decided to use DuckieTown’s virtual simulator to train and test our model’s (aka DuckieBot’s) performance. 
