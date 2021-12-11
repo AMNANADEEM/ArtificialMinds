@@ -12,12 +12,16 @@ example capture of a run that is your best. You are free to include more details
 did it, some of the failure cases, but it is not needed. The video should be a maximum of three minutes
 (less is fine), of reasonably high quality, i.e. a minimum resolution of 1200 ×720 (i.e. 720p), and speech, if
 any, should be comprehensible.]
+
 ## Project Summary
 Duckietown is an urban environment platform that allows people to train DuckieBots to drive on various roads and navigate unseen routes. This platform has been used widely for research on autonomous driving and physically embodied AI systems. Typically, DuckieTown is configured as a physical platform, with hardware being provided to build tracks and low-cost mobile robots being used as DuckieBots. For the purposes of our project, we decided to use DuckieTown’s virtual simulator to train and test our model’s (aka DuckieBot’s) performance. 
+
+![maxresdefault](https://user-images.githubusercontent.com/35225535/145662546-5918da39-0d02-4d19-a224-8a268367b154.jpg)
 
 Initially, the goal of our project was to train an agent (a DuckieBot) to drive on the right side of the street while avoiding pedestrians. With this goal, we were taking on a number of big goals at the same time - teaching the agent to drive straight following its lane, while being on the right side of the lane, and identifying and stopping for pedestrians. Realizing that just one of these areas is challenging on its own, we tweaked our goals to train an agent to just drive on a street following one lane. At the beginning of the quarter, we asked ourselves why machine learning is useful for a lane following bot. Machine learning algorithms make an autonomous bot or vehicle capable of making real-time decisions based on the inputs given to it. More specifically, autonomous driving is an interesting application for reinforcement learning algorithms. Our final goal was to use reinforcement learning to teach our DuckieBot to follow the lane that it starts in, using rewards and punishments as learning metrics.
 
 The inputs provided to our agent from the Duckietown simulator are 640 x 480 resolution images in the form of a NumPy array for each timestep. These images are produced from the 160 degrees fish-eye lens on the front of the bot at a rate of 30 frames/second. The output from our agent is a pair of motor commands specifying the velocity and direction that our DuckieBot should follow for each timestep. 
+
 
 ## Approaches
 In the process of setting up a viable duckietown environment, our team ran into several issues early on. Since duckietown is not supported on Windows, we attempted to use a Linux virtual machine, then we tried to use UCI’s JupyterHub, and finally AWS as suggested by Dailin and the professor. AWS seemed to be the only reasonable option to run the duckietown environment. Despite being our best option, it still wasn’t quite ideal as we weren’t able to run a simulator to visualize what our duckiebot was doing throughout training.
@@ -85,11 +89,10 @@ Another part of our qualitative analysis comes from the training results. As our
 
 
 ## References
-Research papers on DDPG, SAC and other algorithms:
-DDPG implementation of rl template: https://arxiv.org/pdf/1509.02971.pdf
-Past champions: https://github.com/kaland313/Duckietown-RL
-Duckietown repo, documentation manual
-https://docs.duckietown.org/daffy/AIDO/draft/embodied_rl.html
-https://github.com/duckietown/challenge-aido_LF-baseline-RL-sim-pytorch
-DDPG information: https://spinningup.openai.com/en/latest/algorithms/ddpg.html 
-ML libraries: gym, numpy, torch
+
+* Helpful ML/AI libraries: Gym, Numpy, Torch
+* https://arxiv.org/pdf/1509.02971.pdf
+* https://spinningup.openai.com/en/latest/algorithms/ddpg.html
+* https://github.com/kaland313/Duckietown-RL
+* https://docs.duckietown.org/daffy/AIDO/draft/embodied_rl.html
+* https://github.com/duckietown/challenge-aido_LF-baseline-RL-sim-pytorch
