@@ -46,7 +46,6 @@ We were hoping that from these first 3 models we would be able to determine what
 
 Since we did not learn much from the first 5 models that we trained, we wanted to try a different approach by manipulating the observation image and converting it into a grayscale image. There were several wrappers that controlled the rewards, manipulated the image, and other tasks, so we decided to add one that converted the image. While we were able to put the image into grayscale, we were not able to successfully return the correctly sized array and were unable to actually run training with that change due to limits on time. The following is an example of our implementation to convert the image.
 
-![Screenshot (1)](https://user-images.githubusercontent.com/54827433/145662133-2b41e42a-c2b0-4fa1-a793-78b8d7a24775.png)
 
 ## Evaluation
 [An important aspect of your project, is evaluating your project. Be clear and precise about
