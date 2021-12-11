@@ -46,6 +46,7 @@ We were hoping that from these first 3 models we would be able to determine what
 
 Since we did not learn much from the first 5 models that we trained, we wanted to try a different approach by manipulating the observation image and converting it into a grayscale image. There were several wrappers that controlled the rewards, manipulated the image, and other tasks, so we decided to add one that converted the image. While we were able to put the image into grayscale, we were not able to successfully return the correctly sized array and were unable to actually run training with that change due to limits on time. The following is an example of our implementation to convert the image.
 
+![Screenshot (1)](https://user-images.githubusercontent.com/54827433/145662133-2b41e42a-c2b0-4fa1-a793-78b8d7a24775.png)
 
 ## Evaluation
 [An important aspect of your project, is evaluating your project. Be clear and precise about
@@ -54,6 +55,11 @@ the reader that you have solved the problem, to whatever extent you claim you ha
 screenshots, figures, etc. as needed. I expect you will need at least a few paragraphs to describe each type of
 evaluation that you perform.]
 ## References
-[Make a list of work you’re citing in your description above (starting with a level-two header).
-This should include any papers you think are relevant, third-party source code you used, sources for any of
-the images that you didn’t create, and any other websites/links you found useful.]
+Research papers on DDPG, SAC and other algorithms:
+DDPG implementation of rl template: https://arxiv.org/pdf/1509.02971.pdf
+Past champions: https://github.com/kaland313/Duckietown-RL
+Duckietown repo, documentation manual
+https://docs.duckietown.org/daffy/AIDO/draft/embodied_rl.html
+https://github.com/duckietown/challenge-aido_LF-baseline-RL-sim-pytorch
+DDPG information: https://spinningup.openai.com/en/latest/algorithms/ddpg.html 
+ML libraries: gym, numpy, torch
