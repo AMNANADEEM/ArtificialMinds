@@ -30,6 +30,8 @@ In order to train our agent to learn to drive on the right side of the road, we 
 The reward function is based on the agent driving along the right side of the road without going off the road or leaving its lane. The agent is penalized for swaying while moving forward or straying away from the center of the right lane. The agent receives a reward of -1000 for going completely off the road. The DDPG algorithm is a great choice for this problem because it requires very little computation to select the next action. More specifically, the expected reward after taking an action at in state st and following policy π is:
 
 
+![Capture](https://user-images.githubusercontent.com/35225535/142749082-991b7e52-7696-4c18-a458-802f2798d220.PNG)
+
 In our attempts to improve our baseline training policy we tried manipulating the rewards and tuning the hyperparameters. 
 
 We started with modifying the reward function of the algorithm so as to exaggerate positive and negative rewards received for various actions. We gave the model a reward of +150 for following the lane at a decent speed without going off the road, a reward of +70 for driving forward even at lower speeds and a negative reward of -100 for steering off the road or hitting an obstacle. When it came to modifying the rewards, we recognized that we would be significantly altering the way our results looked. Despite the rewards presenting as positive, we had to make sure we were analyzing whether there was improvement in our duckiebot’s ability to follow the lane.
