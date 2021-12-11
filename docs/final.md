@@ -45,6 +45,7 @@ For the other model we just increased start timesteps, which should have increas
 We were hoping that from these first 3 models we would be able to determine what changes to the baseline DDPG training policy improved our Duckiebot’s driving the most. We wanted to combine the changes that gave us the most significant improvements in order to train an even better model. Unfortunately, none of the models showed clear improvements over time. Because the previous models did not show improved results individually, we thought to combine models anyway for the chance of an improved model. For the last two models, we kept the same hyperparameters that we adjusted from previous models and incorporated the modified rewards. However, these models did not show improvements either. 
 
 Since we did not learn much from the first 5 models that we trained, we wanted to try a different approach by manipulating the observation image and converting it into a grayscale image. There were several wrappers that controlled the rewards, manipulated the image, and other tasks, so we decided to add one that converted the image. While we were able to put the image into grayscale, we were not able to successfully return the correctly sized array and were unable to actually run training with that change due to limits on time. The following is an example of our implementation to convert the image.
+![graywrapper](https://user-images.githubusercontent.com/45059021/145662211-859a64f9-08ed-4c31-abfd-6600f1f5dee3.jpg)
 
 
 ## Evaluation
