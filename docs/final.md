@@ -16,7 +16,7 @@ any, should be comprehensible.]
 ## Project Summary
 Duckietown is an urban environment platform that allows people to train DuckieBots to drive on various roads and navigate unseen routes. This platform has been used widely for research on autonomous driving and physically embodied AI systems. Typically, DuckieTown is configured as a physical platform, with hardware being provided to build tracks and low-cost mobile robots being used as DuckieBots. For the purposes of our project, we decided to use DuckieTown’s virtual simulator to train and test our model’s (aka DuckieBot’s) performance. 
 
-![maxresdefault](https://user-images.githubusercontent.com/35225535/145662546-5918da39-0d02-4d19-a224-8a268367b154.jpg)
+<img src="https://user-images.githubusercontent.com/35225535/145662546-5918da39-0d02-4d19-a224-8a268367b154.jpg" width=650 />
 
 Initially, the goal of our project was to train an agent (a DuckieBot) to drive on the right side of the street while avoiding pedestrians. With this goal, we were taking on a number of big goals at the same time - teaching the agent to drive straight following its lane, while being on the right side of the lane, and identifying and stopping for pedestrians. Realizing that just one of these areas is challenging on its own, we tweaked our goals to train an agent to just drive on a street following one lane. At the beginning of the quarter, we asked ourselves why machine learning is useful for a lane following bot. Machine learning algorithms make an autonomous bot or vehicle capable of making real-time decisions based on the inputs given to it. More specifically, autonomous driving is an interesting application for reinforcement learning algorithms. Our final goal was to use reinforcement learning to teach our DuckieBot to follow the lane that it starts in, using rewards and punishments as learning metrics.
 
@@ -28,13 +28,11 @@ In the process of setting up a viable duckietown environment, our team ran into 
 Even with AWS we ran into a few set up issues as our initial training attempts were not able to go past 6 epochs. After reaching out to Dailin we learned that we should have used a g4 instance rather than the free t2 instances we had all started off with. In order to get access to g4 instances, we each needed to request for a vCPU limit increase from AWS. Due to increasing costs of running these more demanding instances, we reached out to Professor Fox, who provided us with a group AWS account. Since this was a new account, we had to once again request a vCPU limit increase, but were initially denied since we had not used the AWS account yet. So then we ran a t2 instance prior to re-requesting the vCPU limit increase. Once we received the vCPU limit increase, had access to the base AMI from Dailin, and were able to start training we realized that we could only run a single training at a time. Since each training we planned to run would approximately take 5-7 hours, we had to coordinate when we could run each training with the changes.   
 In order to train our agent to learn to drive on the right side of the road, we decided to use Deep Deterministic Policy Gradient (DDPG) as the base algorithm. Dailin gave us access to the base AMI with the duckietown environment and a trainable DDPG baseline. DDPG is similar to the Q-learning algorithm as it tries to learn a Q-function and find a policy that can maximize total episode rewards over many time steps. However, DDPG specializes in finding an optimal policy for environments like Duckietown where there are an infinite number of actions the agent can take, i.e. environments with continuous action spaces. The DDPG algorithm makes use of the actor-critic model to work well with continuous action spaces where the actor (or the policy) is used to select the next action to be taken and the critic (or the Q function) is used to evaluate how good the action taken really was. Below are representations of the Duckietown simulator and what the agent sees while deciding on the next action.
 
-
-![data-from-img-finalmain-ed9549e9](https://user-images.githubusercontent.com/35225535/142749079-7d064222-8a4f-4919-8873-d8a374544f25.gif)
+<img src="https://user-images.githubusercontent.com/35225535/142749079-7d064222-8a4f-4919-8873-d8a374544f25.gif" width=2000/>
 
 The reward function is based on the agent driving along the right side of the road without going off the road or leaving its lane. The agent is penalized for swaying while moving forward or straying away from the center of the right lane. The agent receives a reward of -1000 for going completely off the road. The DDPG algorithm is a great choice for this problem because it requires very little computation to select the next action. More specifically, the expected reward after taking an action at in state st and following policy π is:
 
-
-![Capture](https://user-images.githubusercontent.com/35225535/142749082-991b7e52-7696-4c18-a458-802f2798d220.PNG)
+<img src="https://user-images.githubusercontent.com/35225535/142749082-991b7e52-7696-4c18-a458-802f2798d220.PNG" width=650 />
 
 In our attempts to improve our baseline training policy we tried manipulating the rewards and tuning the hyperparameters. 
 
@@ -65,19 +63,19 @@ With our baseline off-policy algorithm (i.e. DDPG), we were able to train our mo
 The results of the baseline model were majorly inconclusive - we were unsure of whether the model was overfitting or the inputs needed to be improved on. We decided to tune various hyperparameters to get a better understanding. The specific ways in which we tuned hyperparameters are mentioned in the Approaches section. Below are some of the rewards plots from testing our trained models. The graphs are heavily populated since they are over many timesteps. However, it is clear to see that the changes we made to our hyperparameters did not help the agent get much better at following the right side of the street. In the first graph, where we modified the rewards function, it initially looked like a step in the right direction due to skewed positive results. However, the body of the graphs suggests that the model may still be overfitting. For this reason, in the following trainings, we decided not to exaggerate the rewards and focus on other hyperparameters (specifically the exploration noise and the start timesteps).
 
 
+__Testing Results (with modified rewards function)__
+
 <img src="https://user-images.githubusercontent.com/35225535/145662318-6c9152a8-a0b8-4ee0-a64f-0bcffb578161.png" width=650 height=600 />
 
-Testing Results (with modified rewards function)
 
+__Testing Results (with increased start_timesteps)__
 
 <img src="https://user-images.githubusercontent.com/35225535/145662403-8ee8df61-031b-4691-af2f-7888cdf3aff7.png" width=650 height=600 />
 
-Testing Results (with increased start_timesteps)
 
+__Testing Results (with increased expl_noise)__
 
 <img src="https://user-images.githubusercontent.com/35225535/145662408-32f80ebf-57d6-4bcf-af82-ee2807fb5533.png" width=650 height=600 />
-
-Testing Results (with increased expl_noise)
 
 
 Qualitative:
